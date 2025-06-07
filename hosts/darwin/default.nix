@@ -51,6 +51,10 @@ let user = "iso"; in
     StandardErrorPath = "/tmp/emacs.err.log";
     StandardOutPath = "/tmp/emacs.out.log";
   };
+ security.pam.services.sudo_local = {
+  touchIdAuth = true;
+  watchIdAuth = true;
+ };
 
   system = {
     checks.verifyNixPath = false;
